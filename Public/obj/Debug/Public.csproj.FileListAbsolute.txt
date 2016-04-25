@@ -1,0 +1,10 @@
+E:\bienngoc\web_MVC\DemoWeb2\Public\bin\Debug\Public.dll
+E:\bienngoc\web_MVC\DemoWeb2\Public\bin\Debug\Public.pdb
+E:\bienngoc\web_MVC\DemoWeb2\Public\obj\Debug\Public.dll
+E:\bienngoc\web_MVC\DemoWeb2\Public\obj\Debug\Public.pdb
+E:\bienngoc\web_MVC\DemoWeb2\Public\obj\Debug\Public.csprojResolveAssemblyReference.cache
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\Public\bin\Debug\Public.dll
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\Public\bin\Debug\Public.pdb
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\Public\obj\Debug\Public.dll
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\Public\obj\Debug\Public.pdb
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\Public\obj\Debug\Public.csprojResolveAssemblyReference.cache

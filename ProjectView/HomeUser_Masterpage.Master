@@ -1,0 +1,272 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeUser_Masterpage.master.cs" Inherits="ProjectView.HomeUser_Masterpage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <script type="application/x-javascript"> 
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+    </script>
+
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+    <script src="js/jquery.min.js"> </script>
+    <!--/script-->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" />
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/ionicons.min.css" />
+    <link rel="stylesheet" href="assets/css/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/section.css" />
+    <link rel="stylesheet" href="assets/css/services.css" />
+
+
+
+    <script src="assets/js/jquery-1.11.2.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/jquery.flexslider.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.mini.js"></script>
+
+
+    <script src='scripts/Js_HomeView/device.min.js'></script>
+
+    <script>
+        jQuery(document).ready(function ($) {
+
+            var jssor_1_SlideoTransitions = [
+              [{ b: 5500.0, d: 3000.0, o: -1.0, r: 240.0, e: { r: 2.0 } }],
+              [{ b: -1.0, d: 1.0, o: -1.0, c: { x: 51.0, t: -51.0 } }, { b: 0.0, d: 1000.0, o: 1.0, c: { x: -51.0, t: 51.0 }, e: { o: 7.0, c: { x: 7.0, t: 7.0 } } }],
+              [{ b: -1.0, d: 1.0, o: -1.0, sX: 9.0, sY: 9.0 }, { b: 1000.0, d: 1000.0, o: 1.0, sX: -9.0, sY: -9.0, e: { sX: 2.0, sY: 2.0 } }],
+              [{ b: -1.0, d: 1.0, o: -1.0, r: -180.0, sX: 9.0, sY: 9.0 }, { b: 2000.0, d: 1000.0, o: 1.0, r: 180.0, sX: -9.0, sY: -9.0, e: { r: 2.0, sX: 2.0, sY: 2.0 } }],
+              [{ b: -1.0, d: 1.0, o: -1.0 }, { b: 3000.0, d: 2000.0, y: 180.0, o: 1.0, e: { y: 16.0 } }],
+              [{ b: -1.0, d: 1.0, o: -1.0, r: -150.0 }, { b: 7500.0, d: 1600.0, o: 1.0, r: 150.0, e: { r: 3.0 } }],
+              [{ b: 10000.0, d: 2000.0, x: -379.0, e: { x: 7.0 } }],
+              [{ b: 10000.0, d: 2000.0, x: -379.0, e: { x: 7.0 } }],
+              [{ b: -1.0, d: 1.0, o: -1.0, r: 288.0, sX: 9.0, sY: 9.0 }, { b: 9100.0, d: 900.0, x: -1400.0, y: -660.0, o: 1.0, r: -288.0, sX: -9.0, sY: -9.0, e: { r: 6.0 } }, { b: 10000.0, d: 1600.0, x: -200.0, o: -1.0, e: { x: 16.0 } }]
+            ];
+
+            var jssor_1_options = {
+                $AutoPlay: true,
+                $SlideDuration: 800,
+                $SlideEasing: $Jease$.$OutQuint,
+                $CaptionSliderOptions: {
+                    $Class: $JssorCaptionSlideo$,
+                    $Transitions: jssor_1_SlideoTransitions
+                },
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$
+                },
+                $BulletNavigatorOptions: {
+                    $Class: $JssorBulletNavigator$
+                }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+
+            .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                position: absolute;
+                /* size of bullet elment */
+                width: 16px;
+                height: 16px;
+                background: url('img/b05.png') no-repeat;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .jssorb05 div {
+                background-position: -7px -7px;
+            }
+
+                .jssorb05 div:hover, .jssorb05 .av:hover {
+                    background-position: -37px -7px;
+                }
+
+            .jssorb05 .av {
+                background-position: -67px -7px;
+            }
+
+            .jssorb05 .dn, .jssorb05 .dn:hover {
+                background-position: -97px -7px;
+            }
+
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('img/a22.png') center center no-repeat;
+            overflow: hidden;
+        }
+
+        .jssora22l {
+            background-position: -10px -31px;
+        }
+
+        .jssora22r {
+            background-position: -70px -31px;
+        }
+
+        .jssora22l:hover {
+            background-position: -130px -31px;
+        }
+
+        .jssora22r:hover {
+            background-position: -190px -31px;
+        }
+
+        .jssora22l.jssora22ldn {
+            background-position: -250px -31px;
+        }
+
+        .jssora22r.jssora22rdn {
+            background-position: -310px -31px;
+        }
+    </style>
+    <script type="application/x-javascript"> 
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+    </script>
+    <script src="js/jquery.min.js"> </script>
+    <!--/script-->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.aspx" title="HOME"><i class="ion-paper-airplane"></i>VIETNAM <span>TOURISM</span></a>
+                    </div>
+                    <!-- /.navbar-header -->
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <asp:ContentPlaceHolder ID="head" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <li visible="false" id="a" runat="server">
+                                <a href="UserPage.aspx">
+                                    <asp:Label runat="server" Text="Welcome: " ID="Label1"></asp:Label>
+                                </a>
+                            </li>
+                            <li id="loginLI" runat="server">
+                                <a href="LoginPage.aspx">
+                                    <asp:Label runat="server" Text="Login" ID="lblLogin" >
+                                        
+                                    </asp:Label>
+                                </a>
+                            </li>
+                            <li visible="false" id="logoutli" runat="server">
+                                <a>
+                                    <asp:Button BorderStyle="None" BackColor="Window" ID="btnLogout" Text="Logout" runat="server" OnClick="btnLogout_Click" />
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.nav -->
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+
+            <div id="divAdRight" style="display: none; position: absolute; top: 0px">
+                <a href="http://namkna.blogspot.com/">
+                    <img src="http://3.bp.blogspot.com/-fwY6-GU-uxY/T4IrBW_d3zI/AAAAAAAABgE/b6pKfitRwiY/s1600/banner-quang-cao-dep-nhat-truot-doc-2-ben-namkna-blogspot.png" width="200" /></a>
+            </div>
+            <div id="divAdLeft" style="display: none; position: absolute; top: 0px">
+                <a href="http://namkna.blogspot.com/">
+                    <img src="http://3.bp.blogspot.com/-fwY6-GU-uxY/T4IrBW_d3zI/AAAAAAAABgE/b6pKfitRwiY/s1600/banner-quang-cao-dep-nhat-truot-doc-2-ben-namkna-blogspot.png" width="200" /></a>
+            </div>
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

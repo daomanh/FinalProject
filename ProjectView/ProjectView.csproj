@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68665C39-F43A-4DA5-8BA3-3A63125021B6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectView</RootNamespace>
+    <AssemblyName>ProjectView</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminPage\assets\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="AdminPage\assets\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="AdminPage\assets\bootstrap\css\bootstrap.css" />
+    <Content Include="AdminPage\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="AdminPage\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdminPage\assets\bootstrap\js\bootstrap.js" />
+    <Content Include="AdminPage\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="AdminPage\assets\bootstrap\js\npm.js" />
+    <Content Include="AdminPage\assets\css\form-elements.css" />
+    <Content Include="AdminPage\assets\css\style.css" />
+    <Content Include="AdminPage\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="AdminPage\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="AdminPage\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminPage\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="AdminPage\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="AdminPage\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="AdminPage\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="AdminPage\assets\ico\favicon.png" />
+    <Content Include="AdminPage\assets\img\backgrounds\1%402x.jpg" />
+    <Content Include="AdminPage\assets\img\backgrounds\1.jpg" />
+    <Content Include="AdminPage\assets\js\jquery-1.11.1.js" />
+    <Content Include="AdminPage\assets\js\jquery-1.11.1.min.js" />
+    <Content Include="AdminPage\assets\js\jquery.backstretch.js" />
+    <Content Include="AdminPage\assets\js\jquery.backstretch.min.js" />
+    <Content Include="AdminPage\assets\js\placeholder.js" />
+    <Content Include="AdminPage\assets\js\scripts.js" />
+    <Content Include="AdminPage\Booking\AllBooking.aspx" />
+    <Content Include="AdminPage\Booking\BookingDetail.aspx" />
+    <Content Include="AdminPage\Contact\AllContact.aspx" />
+    <Content Include="AdminPage\Contact\ContactDetail.aspx" />
+    <Content Include="AdminPage\css\awesome-bootstrap-checkbox.css" />
+    <Content Include="AdminPage\css\bootstrap-select.css" />
+    <Content Include="AdminPage\css\bootstrap-social.css" />
+    <Content Include="AdminPage\css\bootstrap.min.css" />
+    <Content Include="AdminPage\css\css\vars.css" />
+    <Content Include="AdminPage\css\dataTables.bootstrap.min.css" />
+    <Content Include="AdminPage\css\datatables.min.css" />
+    <Content Include="AdminPage\css\fileinput.min.css" />
+    <Content Include="AdminPage\css\font-awesome.min.css" />
+    <Content Include="AdminPage\css\jquery.dataTables.min.css" />
+    <Content Include="AdminPage\css\style.css" />
+    <Content Include="AdminPage\DetailReview.aspx" />
+    <Content Include="AdminPage\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminPage\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdminPage\img\login-bg.jpg" />
+    <Content Include="AdminPage\img\logo.jpg" />
+    <Content Include="AdminPage\img\ts-avatar.jpg" />
+    <Content Include="AdminPage\Index.aspx" />
+    <Content Include="AdminPage\Index_review.aspx" />
+    <Content Include="AdminPage\js\bootstrap-select.js" />
+    <Content Include="AdminPage\js\bootstrap-select.min.js" />
+    <Content Include="AdminPage\js\bootstrap.js" />
+    <Content Include="AdminPage\js\bootstrap.min.js" />
+    <Content Include="AdminPage\js\Chart.min.js" />
+    <Content Include="AdminPage\js\chartData.js" />
+    <Content Include="AdminPage\js\dataTables.bootstrap.min.js" />
+    <Content Include="AdminPage\js\fileinput.js" />
+    <Content Include="AdminPage\js\jquery.dataTables.min.js" />
+    <Content Include="AdminPage\js\jquery.min.js" />
+    <Content Include="AdminPage\js\main.js" />
+    <Content Include="AdminPage\Location\image\noImage.png" />
+    <Content Include="AdminPage\Location\NewLocation.aspx" />
+    <Content Include="AdminPage\Location\UpdateLocation.aspx" />
+    <Content Include="AdminPage\LoginAdmin.aspx" />
+    <Content Include="AdminPage\PictureBanner\DetailImage.aspx" />
+    <Content Include="AdminPage\PictureBanner\NewImageBanner.aspx" />
+    <Content Include="AdminPage\PictureBanner\PictureBanner_Index.aspx" />
+    <Content Include="AdminPage\ReplyReview_detail.aspx" />
+    <Content Include="AdminPage\ReviewRep_detail.aspx" />
+    <Content Include="AdminPage\User\User_index.aspx" />
+    <Content Include="assets\css\about.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\contact.css" />
+    <Content Include="assets\css\flexslider.css" />
+    <Content Include="assets\css\fonts\flexslider-icon.svg" />
+    <Content Include="assets\css\ionicons.css" />
+    <Content Include="assets\css\ionicons.min.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\owl.carousel.css" />
+    <Content Include="assets\css\owl.theme.css" />
+    <Content Include="assets\css\section.css" />
+    <Content Include="assets\css\services.css" />
+    <Content Include="assets\fonts\ionicons.svg" />
+    <Content Include="assets\images\ab-1.png" />
+    <Content Include="assets\images\ab-2.png" />
+    <Content Include="assets\images\ab-3.png" />
+    <Content Include="assets\images\ab-4.png" />
+    <Content Include="assets\images\add-srvc-1.png" />
+    <Content Include="assets\images\add-srvc-2.png" />
+    <Content Include="assets\images\add-srvc-3.png" />
+    <Content Include="assets\images\add-srvc-4.png" />
+    <Content Include="assets\images\add-srvc-5.png" />
+    <Content Include="assets\images\add-srvc-6.png" />
+    <Content Include="assets\images\client.png" />
+    <Content Include="assets\images\cta-1.png" />
+    <Content Include="assets\images\features-bg-1.png" />
+    <Content Include="assets\images\features-bg-2.png" />
+    <Content Include="assets\images\features-bg.png" />
+    <Content Include="assets\images\header.png" />
+    <Content Include="assets\images\item-1.png" />
+    <Content Include="assets\images\item-2.png" />
+    <Content Include="assets\images\section-header.png" />
+    <Content Include="assets\images\service-owl-bg.png" />
+    <Content Include="assets\images\sp-1.png" />
+    <Content Include="assets\images\sp-2.png" />
+    <Content Include="assets\images\sp-3.png" />
+    <Content Include="assets\images\sp-4.png" />
+    <Content Include="assets\images\sp-5.png" />
+    <Content Include="assets\images\sp-6.png" />
+    <Content Include="assets\images\visit-1.png" />
+    <Content Include="assets\images\visit-2.png" />
+    <Content Include="assets\images\visit-3.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\contact.js" />
+    <Content Include="assets\js\jquery-1.11.2.min.js" />
+    <Content Include="assets\js\jquery.flexslider.js" />
+    <Content Include="assets\js\owl.carousel.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\smoothscroll.js" />
+    <Content Include="BookingPage.aspx" />
+    <Content Include="ContactPage.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\chocolat.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style3.css" />
+    <Content Include="DetailLocation.aspx" />
+    <Content Include="font\glyphicons-halflings-regular.svg" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\camera-loader.gif" />
+    <Content Include="images\fancybox_loading%402x.gif" />
+    <Content Include="images\fancybox_loading.gif" />
+    <Content Include="images\fancybox_overlay.png" />
+    <Content Include="images\fancybox_sprite%402x.png" />
+    <Content Include="images\fancybox_sprite.png" />
+    <Content Include="images\gmap_marker.png" />
+    <Content Include="images\gmap_marker_active.png" />
+    <Content Include="images\icons.png" />
+    <Content Include="images\lazy-loader.gif" />
+    <Content Include="images\page-1_img01.jpg" />
+    <Content Include="images\page-1_img02.jpg" />
+    <Content Include="images\page-1_img03.jpg" />
+    <Content Include="images\page-1_img03_original.jpg" />
+    <Content Include="images\page-1_img04.jpg" />
+    <Content Include="images\page-1_img04_origianl.jpg" />
+    <Content Include="images\page-1_img04_original.jpg" />
+    <Content Include="images\page-1_img05.jpg" />
+    <Content Include="images\page-1_img05_original.jpg" />
+    <Content Include="images\page-1_img06.jpg" />
+    <Content Include="images\page-1_img06_original.jpg" />
+    <Content Include="images\page-1_img07.jpg" />
+    <Content Include="images\page-1_img07_original.jpg" />
+    <Content Include="images\page-1_img08.jpg" />
+    <Content Include="images\page-1_img08_original.jpg" />
+    <Content Include="images\page-1_img09.jpg" />
+    <Content Include="images\page-1_img09_original.jpg" />
+    <Content Include="images\page-1_img10.jpg" />
+    <Content Include="images\page-1_img10_original.jpg" />
+    <Content Include="images\page-1_img11.jpg" />
+    <Content Include="images\page-1_img11_original.jpg" />
+    <Content Include="images\page-1_img12.jpg" />
+    <Content Include="images\page-1_img13.jpg" />
+    <Content Include="images\page-1_img14.jpg" />
+    <Content Include="images\page-2_img01.jpg" />
+    <Content Include="images\page-2_img02.jpg" />
+    <Content Include="images\page-3_img01.jpg" />
+    <Content Include="images\page-3_img02.jpg" />
+    <Content Include="images\page-3_img03.jpg" />
+    <Content Include="images\page-3_img04.jpg" />
+    <Content Include="images\page-3_img05.jpg" />
+    <Content Include="images\page-3_img06.jpg" />
+    <Content Include="images\page-3_img07.jpg" />
+    <Content Include="images\page-4_img01.jpg" />
+    <Content Include="images\page-4_img02.jpg" />
+    <Content Include="images\page-4_img03.jpg" />
+    <Content Include="images\page-4_img04.jpg" />
+    <Content Include="images\page-4_img05.jpg" />
+    <Content Include="images\page-4_img06.jpg" />
+    <Content Include="images\page-4_img07.jpg" />
+    <Content Include="images\page-4_img08.jpg" />
+    <Content Include="images\page-4_img09.jpg" />
+    <Content Include="images\parallax01.jpg" />
+    <Content Include="images\parallax02.jpg" />
+    <Content Include="images\parallax03.jpg" />
+    <Content Include="images\parallax04.jpg" />
+    <Content Include="images\parallax05.jpg" />
+    <Content Include="images\select.png" />
+    <Content Include="images\slide01.jpg" />
+    <Content Include="images\slide01_thumb.jpg" />
+    <Content Include="images\slide02.jpg" />
+    <Content Include="images\slide02_thumb.jpg" />
+    <Content Include="images\slide03.jpg" />
+    <Content Include="images\slide03_thumb.jpg" />
+    <Content Include="images\TM_logo.png" />
+    <Content Include="Js\jquery-1.9.1.min.js" />
+    <Content Include="Js\JSdownload\jquery-1.3.2.js" />
+    <Content Include="Js\JSdownload\jquery.MultiFile.js" />
+    <Content Include="Js\jssor.slider.debug.js" />
+    <Content Include="Js\jssor.slider.min.js" />
+    <Content Include="Js\jssor.slider.mini.js" />
+    <Content Include="Js\RatingStar.js" />
+    <Content Include="Location.aspx" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HomeUser_Masterpage.Master" />
+    <Content Include="Js\tables\data1.json" />
+    <Content Include="Js\tables\data2.json" />
+    <Content Include="font\glyphicons-halflings-regular.eot" />
+    <Content Include="font\glyphicons-halflings-regular.ttf" />
+    <Content Include="font\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminPage\Admin_masterPage.Master" />
+    <Content Include="assets\css\fonts\flexslider-icon.eot" />
+    <Content Include="assets\css\fonts\flexslider-icon.ttf" />
+    <Content Include="assets\css\fonts\flexslider-icon.woff" />
+    <Content Include="assets\fonts\ionicons.eot" />
+    <Content Include="assets\fonts\ionicons.ttf" />
+    <Content Include="assets\fonts\ionicons.woff" />
+    <Content Include="assets\images\Thumbs.db" />
+    <Content Include="AdminPage\css\less\components.less" />
+    <Content Include="AdminPage\css\less\vars.less" />
+    <Content Include="AdminPage\css\style.less" />
+    <Content Include="AdminPage\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminPage\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminPage\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminPage\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminPage\fonts\FontAwesome.otf" />
+    <Content Include="AdminPage\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminPage\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminPage\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminPage\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AdminPage\assets\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="AdminPage\assets\bootstrap\css\bootstrap.css.map" />
+    <Content Include="AdminPage\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AdminPage\assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AdminPage\assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AdminPage\assets\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="AdminPage\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminPage\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminPage\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminPage\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminPage\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="AdminPage\assets\font-awesome\less\animated.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\core.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\fixed-width.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\icons.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\larger.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\list.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\mixins.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\path.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\stacked.less" />
+    <Content Include="AdminPage\assets\font-awesome\less\variables.less" />
+    <Content Include="AdminPage\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_animated.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_core.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_larger.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_list.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_path.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="AdminPage\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="AdminPage\Location\Location_MasterPAge.Master" />
+    <Content Include="AdminPage\PictureBanner\PictureBanner_MasterPage.Master" />
+    <Content Include="AdminPage\User\User_MasterPage.Master" />
+    <Content Include="AdminPage\Booking\Booking_MasterPage.Master" />
+    <Content Include="AdminPage\Contact\Contact_MasterPage.Master" />
+    <Content Include="SiteMap.aspx" />
+    <Content Include="UpdateAcount.aspx" />
+    <Content Include="UserLayout.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\ab-1.png" />
+    <Content Include="images\ab-2.png" />
+    <Content Include="images\ab-3.png" />
+    <Content Include="images\ab-4.png" />
+    <Content Include="images\add-srvc-1.png" />
+    <Content Include="images\add-srvc-2.png" />
+    <Content Include="images\add-srvc-3.png" />
+    <Content Include="images\add-srvc-4.png" />
+    <Content Include="images\add-srvc-5.png" />
+    <Content Include="images\add-srvc-6.png" />
+    <Content Include="images\client.png" />
+    <Content Include="images\cta-1.png" />
+    <Content Include="images\features-bg-1.png" />
+    <Content Include="images\features-bg-2.png" />
+    <Content Include="images\features-bg.png" />
+    <Content Include="images\header.png" />
+    <Content Include="images\item-1.png" />
+    <Content Include="images\item-2.png" />
+    <Content Include="images\section-header.png" />
+    <Content Include="images\service-owl-bg.png" />
+    <Content Include="images\sp-1.png" />
+    <Content Include="images\sp-2.png" />
+    <Content Include="images\sp-3.png" />
+    <Content Include="images\sp-4.png" />
+    <Content Include="images\sp-5.png" />
+    <Content Include="images\sp-6.png" />
+    <Content Include="images\visit-1.png" />
+    <Content Include="images\visit-2.png" />
+    <Content Include="images\visit-3.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="SearchResult.aspx" />
+    <Content Include="UserPage.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminPage\Admin_masterPage.Master.cs">
+      <DependentUpon>Admin_masterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Admin_masterPage.Master.designer.cs">
+      <DependentUpon>Admin_masterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Booking\AllBooking.aspx.cs">
+      <DependentUpon>AllBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Booking\AllBooking.aspx.designer.cs">
+      <DependentUpon>AllBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Booking\BookingDetail.aspx.cs">
+      <DependentUpon>BookingDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Booking\BookingDetail.aspx.designer.cs">
+      <DependentUpon>BookingDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Booking\Booking_MasterPage.Master.cs">
+      <DependentUpon>Booking_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Booking\Booking_MasterPage.Master.designer.cs">
+      <DependentUpon>Booking_MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Contact\AllContact.aspx.cs">
+      <DependentUpon>AllContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Contact\AllContact.aspx.designer.cs">
+      <DependentUpon>AllContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Contact\ContactDetail.aspx.cs">
+      <DependentUpon>ContactDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Contact\ContactDetail.aspx.designer.cs">
+      <DependentUpon>ContactDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Contact\Contact_MasterPage.Master.cs">
+      <DependentUpon>Contact_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Contact\Contact_MasterPage.Master.designer.cs">
+      <DependentUpon>Contact_MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\DetailReview.aspx.cs">
+      <DependentUpon>DetailReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\DetailReview.aspx.designer.cs">
+      <DependentUpon>DetailReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Index_review.aspx.cs">
+      <DependentUpon>Index_review.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Index_review.aspx.designer.cs">
+      <DependentUpon>Index_review.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Location\Location_MasterPAge.Master.cs">
+      <DependentUpon>Location_MasterPAge.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Location\Location_MasterPAge.Master.designer.cs">
+      <DependentUpon>Location_MasterPAge.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Location\NewLocation.aspx.cs">
+      <DependentUpon>NewLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Location\NewLocation.aspx.designer.cs">
+      <DependentUpon>NewLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\Location\UpdateLocation.aspx.cs">
+      <DependentUpon>UpdateLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\Location\UpdateLocation.aspx.designer.cs">
+      <DependentUpon>UpdateLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\DetailImage.aspx.cs">
+      <DependentUpon>DetailImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\DetailImage.aspx.designer.cs">
+      <DependentUpon>DetailImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\NewImageBanner.aspx.cs">
+      <DependentUpon>NewImageBanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\NewImageBanner.aspx.designer.cs">
+      <DependentUpon>NewImageBanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\PictureBanner_Index.aspx.cs">
+      <DependentUpon>PictureBanner_Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\PictureBanner_Index.aspx.designer.cs">
+      <DependentUpon>PictureBanner_Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\PictureBanner_MasterPage.Master.cs">
+      <DependentUpon>PictureBanner_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\PictureBanner\PictureBanner_MasterPage.Master.designer.cs">
+      <DependentUpon>PictureBanner_MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\ReplyReview_detail.aspx.cs">
+      <DependentUpon>ReplyReview_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\ReplyReview_detail.aspx.designer.cs">
+      <DependentUpon>ReplyReview_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\ReviewRep_detail.aspx.cs">
+      <DependentUpon>ReviewRep_detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\ReviewRep_detail.aspx.designer.cs">
+      <DependentUpon>ReviewRep_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\User\User_index.aspx.cs">
+      <DependentUpon>User_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\User\User_index.aspx.designer.cs">
+      <DependentUpon>User_index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage\User\User_MasterPage.Master.cs">
+      <DependentUpon>User_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage\User\User_MasterPage.Master.designer.cs">
+      <DependentUpon>User_MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="BookingPage.aspx.cs">
+      <DependentUpon>BookingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingPage.aspx.designer.cs">
+      <DependentUpon>BookingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactPage.aspx.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactPage.aspx.designer.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailLocation.aspx.cs">
+      <DependentUpon>DetailLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailLocation.aspx.designer.cs">
+      <DependentUpon>DetailLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUser_Masterpage.Master.cs">
+      <DependentUpon>HomeUser_Masterpage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeUser_Masterpage.Master.designer.cs">
+      <DependentUpon>HomeUser_Masterpage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Location.aspx.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Location.aspx.designer.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SiteMap.aspx.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMap.aspx.designer.cs">
+      <DependentUpon>SiteMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateAcount.aspx.cs">
+      <DependentUpon>UpdateAcount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateAcount.aspx.designer.cs">
+      <DependentUpon>UpdateAcount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLayout.Master.cs">
+      <DependentUpon>UserLayout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLayout.Master.designer.cs">
+      <DependentUpon>UserLayout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage.aspx.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserPage.aspx.designer.cs">
+      <DependentUpon>UserPage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{bd3e86f1-b5a8-4880-b132-890005f0d722}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{cc2dc07e-8b07-487a-b4d6-9062c3eaaaee}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Public\Public.csproj">
+      <Project>{a5b7a0f3-299f-4599-802d-bd0c25f88564}</Project>
+      <Name>Public</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdminPage\PictureBanner\image\" />
+    <Folder Include="images\ie8-panel\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13670</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13670/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+E:\bienngoc\web_MVC\DemoWeb2\DataAccess\bin\Debug\DataAccess.dll
+E:\bienngoc\web_MVC\DemoWeb2\DataAccess\bin\Debug\DataAccess.pdb
+E:\bienngoc\web_MVC\DemoWeb2\DataAccess\bin\Debug\Public.dll
+E:\bienngoc\web_MVC\DemoWeb2\DataAccess\bin\Debug\Public.pdb
+E:\bienngoc\web_MVC\DemoWeb2\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+E:\bienngoc\web_MVC\DemoWeb2\DataAccess\obj\Debug\DataAccess.dll
+E:\bienngoc\web_MVC\DemoWeb2\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\DataAccess\bin\Debug\Public.dll
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\DataAccess\bin\Debug\Public.pdb
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\NobitaNobi\Desktop\3layer\DemoWeb2\DataAccess\obj\Debug\DataAccess.pdb
